@@ -7,7 +7,10 @@ public class waiter
     {
         this.orderSheet=orders;
     }
-
+    public String[] giveOrderSheet()
+    {
+        return this.orderSheet;
+    }
     public String[] bringFood()
     {
         return foodTray;
