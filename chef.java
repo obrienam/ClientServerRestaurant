@@ -22,6 +22,7 @@ public class chef
             }
         }
         System.out.println("Order Up!");
+        this.preparedFood=this.orderList;
         return true;
     }
     public String[] giveFood()

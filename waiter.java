@@ -11,6 +11,10 @@ public class waiter
     {
         return this.orderSheet;
     }
+    public void takeFood(String[] foodTray)
+    {
+        this.foodTray=foodTray;
+    }
     public String[] bringFood()
     {
         return foodTray;

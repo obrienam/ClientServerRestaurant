@@ -1,3 +1,4 @@
+
 public class table 
 {
     private int numCustomers;
@@ -14,4 +15,15 @@ public class table
         return orders;
     }
 
+    public String receiveFood(String[] food)
+    {
+        if(food.equals(orders))
+        {
+            return "Order is correct. Happy Customers!";
+        }
+        else 
+        {
+            return "Order is wrong. Unhappy Customers!";
+        }
+    }
 }

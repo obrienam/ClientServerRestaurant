@@ -5,21 +5,33 @@ public class driver
         chef Chef = new chef();
         String[] orders1={"Steak","Salad","Chicken Strips","Burger"};
         table Table1 = new table(4, orders1);
-        String[] orders2={"Steak","Salad","Chicken Strips","Burger"};
+        String[] orders2={"Wrap","Salad","Ribs","Burger"};
         table Table2 = new table(4, orders2);
-        String[] orders3={"Steak","Salad","Chicken Strips","Burger"};
+        String[] orders3={"Wings","Tacos","Salad","Burger"};
         table Table3 = new table(4, orders3);
-        String[] orders4={"Steak","Salad","Chicken Strips","Burger"};
+        String[] orders4={"Tacos","Chicken Strips","Salad","Burger"};
         table Table4 = new table(4, orders4);
         waiter Waiter = new waiter();
         table[] tables=new table[]{Table1,Table2,Table3,Table4};
         for(int i=0;i<4;i++)
         {
-            System.out.printf("Waiter taking order %d\n",i);
+            System.out.printf("Waiter took order %d\n",i+1);
             Waiter.takeOrder(tables[i].giveOrders());
-            System.out.printf("Waiter delivering order %d\n",i);
+            System.out.printf("Waiter taking order %d to chef\n",i+1);
             Chef.getSheet(Waiter.giveOrderSheet());
+            Chef.makeFood();
+            Waiter.takeFood(Chef.giveFood());
+            System.out.printf("Waiter delivering order %d to table\n",i+1);
+            System.out.println(tables[i].receiveFood(Waiter.bringFood()));
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println("Error");
+            }
         }
-        System.out.println("Initialized");
+        
     }
 }
