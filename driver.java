@@ -29,7 +29,7 @@ public class driver
                 System.out.printf("Table %d gave order to waiter\n",i+1);
                 Thread.sleep(2000);
                 Waiter.takeOrder(tables[i].giveOrders());
-                System.out.printf("Waiter delivering order %d to chef\n",i+1);
+                System.out.printf("Waiter delivering sheet for order %d to chef\n",i+1);
                 Thread.sleep(2000);
                 Chef.getSheet(Waiter.giveOrderSheet());
                 Chef.makeFood();
