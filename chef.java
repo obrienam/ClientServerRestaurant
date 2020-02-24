@@ -17,7 +17,7 @@ public class chef
                 Thread.sleep(1000);
                 
             }
-            System.out.println("Order Up!");
+            System.out.println("Chef places food on the counter for the waiter.");
         }
         catch(InterruptedException e)
         {
