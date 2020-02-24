@@ -1,12 +1,15 @@
+//This is a chef class that represents the server
+//part of the Client Server architecture.
 public class chef 
 {
     private String[] orderList;
     private String[] preparedFood;
-
+    //Accepts request.
     public void getSheet(String[] orderList)
     {
         this.orderList=orderList;
     }
+    //Fulfills request.
     public boolean makeFood()
     {
         try
@@ -26,6 +29,7 @@ public class chef
         this.preparedFood=this.orderList;
         return true;
     }
+    //Gives requested info to network.
     public String[] giveFood()
     {
         return preparedFood;

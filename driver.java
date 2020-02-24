@@ -1,9 +1,17 @@
+//This is the driver code for the client server
+//restaurant simulation. In this simulation there
+//are four clients(tables) who submit requests 
+//to the server(chef) through the network(waiter).
+//Once their request is fulfilled, the server gives
+//the requested information back to the client
+//through the network again.
 public class driver
 {    
     public static void main(String[] args)
     {
         try
         {
+            //Initilization code
             chef Chef = new chef();
             String[] orders1={"Steak","Salad","Chicken Strips","Burger"};
             table Table1 = new table(4, orders1);
@@ -24,17 +32,22 @@ public class driver
             System.out.println("");
             Thread.sleep(3000);
             
+            //Client Server simulation code
             for(int i=0;i<4;i++)
             {
+                //Client submits request.
                 System.out.printf("Table %d gave order to waiter\n",i+1);
                 Thread.sleep(2000);
+                //Network communicates request to server.
                 Waiter.takeOrder(tables[i].giveOrders());
                 System.out.printf("Waiter delivers order sheet %d to chef\n",i+1);
                 Thread.sleep(2000);
+                //Server retrieves requested information.
                 Chef.getSheet(Waiter.giveOrderSheet());
                 Chef.makeFood();
                 Waiter.takeFood(Chef.giveFood());
                 Thread.sleep(2000);
+                //Network delivers requested information to client.
                 System.out.printf("Waiter delivers order %d to table %d\n",i+1,i+1);
                 Thread.sleep(2000);
                 System.out.println(tables[i].receiveFood(Waiter.bringFood()));
