@@ -9,19 +9,20 @@ public class chef
     }
     public boolean makeFood()
     {
-        for(int i = 0; i < orderList.length; i++)
+        try
         {
-            System.out.printf("Preparing: %s\n",orderList[i]);
-            try
+            for(int i = 0; i < orderList.length; i++)
             {
+                System.out.printf("Chef preparing: %s\n",orderList[i]);
                 Thread.sleep(1000);
+                
             }
-            catch(InterruptedException e)
-            {
-                System.out.println("Error");
-            }
+            System.out.println("Order Up!");
         }
-        System.out.println("Order Up!");
+        catch(InterruptedException e)
+        {
+            System.out.println("Error");
+        }
         this.preparedFood=this.orderList;
         return true;
     }

@@ -15,17 +15,21 @@ public class driver
         table[] tables=new table[]{Table1,Table2,Table3,Table4};
         for(int i=0;i<4;i++)
         {
-            System.out.printf("Waiter took order %d\n",i+1);
-            Waiter.takeOrder(tables[i].giveOrders());
-            System.out.printf("Waiter taking order %d to chef\n",i+1);
-            Chef.getSheet(Waiter.giveOrderSheet());
-            Chef.makeFood();
-            Waiter.takeFood(Chef.giveFood());
-            System.out.printf("Waiter delivering order %d to table\n",i+1);
-            System.out.println(tables[i].receiveFood(Waiter.bringFood()));
             try
             {
+                System.out.printf("Waiter took order from table %d\n",i+1);
                 Thread.sleep(1000);
+                Waiter.takeOrder(tables[i].giveOrders());
+                System.out.printf("Waiter delivering order %d to chef\n",i+1);
+                Thread.sleep(1000);
+                Chef.getSheet(Waiter.giveOrderSheet());
+                Chef.makeFood();
+                Waiter.takeFood(Chef.giveFood());
+                Thread.sleep(1000);
+                System.out.printf("Waiter delivering order %d to table\n",i+1);
+                Thread.sleep(2000);
+                System.out.println(tables[i].receiveFood(Waiter.bringFood()));
+                Thread.sleep(2000);
             }
             catch(InterruptedException e)
             {
