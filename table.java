@@ -1,4 +1,4 @@
-//This is a table class that represents the network
+//This is a table class that represents the
 //client of the Client Server architecture.
 public class table 
 {
