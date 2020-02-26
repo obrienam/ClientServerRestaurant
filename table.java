@@ -1,5 +1,5 @@
-//This is a table class that represents the
-//client of the Client Server architecture.
+//This is the table class that represents a 
+//client in the Client Server architecture.
 public class table 
 {
     private int numCustomers;

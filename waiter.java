@@ -1,5 +1,5 @@
-//This is a waiter class that represents the network
-//part of the Client Server architecture.
+//This is the waiter class that represents the network
+//in the Client Server architecture.
 public class waiter
 {
     private String[] orderSheet;

@@ -1,10 +1,10 @@
-//This is a chef class that represents the server
-//part of the Client Server architecture.
+//This is the chef class that represents the server
+//in the Client Server architecture.
 public class chef 
 {
     private String[] orderList;
     private String[] preparedFood;
-    //Accepts request.
+    //Accepts request from network.
     public void getSheet(String[] orderList)
     {
         this.orderList=orderList;

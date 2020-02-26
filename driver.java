@@ -1,5 +1,6 @@
 //This is the driver code for the client server
-//restaurant simulation. In this simulation there
+//architecture used to simulate the food ordering
+//system at a common restaurant. In this simulation there
 //are four clients(tables) who submit requests 
 //to the server(chef) through the network(waiter).
 //Once their request is fulfilled, the server gives
@@ -24,8 +25,8 @@ public class driver
             waiter Waiter = new waiter();
             table[] tables=new table[]{Table1,Table2,Table3,Table4};
             System.out.println("");
-            System.out.println("Client Surver Architecture Basic Implementation");
-            System.out.println("Represented by a food ordering system at a restaurant");
+            System.out.println("This is a simulation of a restaurant food ordering system");
+            System.out.println("represented by a client server architecture.");
             System.out.println("Clients are the 4 tables");
             System.out.println("Network is the waiter");
             System.out.println("Server is the chef");
